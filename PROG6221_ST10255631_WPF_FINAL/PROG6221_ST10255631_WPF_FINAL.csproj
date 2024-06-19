@@ -62,6 +62,9 @@
     <Compile Include="RECIPE adder window.xaml.cs">
       <DependentUpon>RECIPE adder window.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RecipeAdderPage.xaml.cs">
+      <DependentUpon>RecipeAdderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="REPICE.cs" />
     <Page Include="Display recipe window.xaml">
       <SubType>Designer</SubType>
@@ -80,6 +83,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RECIPE adder window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecipeAdderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

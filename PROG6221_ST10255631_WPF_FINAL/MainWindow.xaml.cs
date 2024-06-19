@@ -23,6 +23,25 @@ namespace PROG6221_ST10255631_WPF_FINAL
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Logic for adding a new recipe
+            
+        }
+
+        private void ViewRecipeButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Logic for viewing saved recipes
+            
+        }
+
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Logic for generating a menu
+            
         }
     }
 }
