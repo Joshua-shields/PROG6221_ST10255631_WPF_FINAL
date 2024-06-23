@@ -1,28 +1,47 @@
 ﻿<Window
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="PROG6221_ST10255631_WPF_FINAL.RECIPE_adder_window"
+      xmlns:av="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      mc:Ignorable="av" 
+      x:Class="PROG6221_ST10255631_WPF_FINAL.RECIPE_adder_window"
       Title="Add a New Recipe"
-      Background="#FFFAF0" av:DesignHeight="295" av:DesignWidth="250">
+      Background="#FFFAF0" 
+      av:DesignHeight="600" 
+      av:DesignWidth="400">
 
-    <StackPanel Margin="30" Background="#FFF0E6">
-        <Label Content="Recipe Name:" 
-               FontSize="18" FontWeight="Bold" Margin="0,0,0,10" />
-        <TextBox x:Name="RecipeNameTextBox" Margin="0,0,0,10" 
-                 Padding="8" BorderBrush="#D4A373" BorderThickness="1"  />
+    <ScrollViewer Margin="0,0,0,-171">
+        <StackPanel Margin="30" Background="#FFF0E6">
+            <Label Content="Recipe Name:"
+                   FontSize="18" FontWeight="Bold" Margin="0,0,0,10" />
+            <TextBox x:Name="RecipeNameTextBox" Margin="0,0,0,10"
+                     Padding="8" BorderBrush="#D4A373" BorderThickness="1" />
 
-        <GroupBox Header="Ingredients" Margin="0,0,0,10"
-                  BorderBrush="#D4A373">
-            <StackPanel x:Name="IngredientsPanel"/>
-        </GroupBox>
+            <GroupBox Header="Ingredients" Margin="0,0,0,10"
+                      BorderBrush="#D4A373">
+                <StackPanel x:Name="IngredientsPanel">
+                    <TextBox x:Name="IngredientNameTextBox" Margin="0,5" Padding="5" />
+                    <TextBox x:Name="QuantityTextBox" Margin="0,5" Padding="5" />
+                    <ComboBox x:Name="UnitComboBox" Margin="0,5" Padding="5" />
+                    <TextBox x:Name="CaloriesTextBox" Margin="0,5" Padding="5" />
+                    <ComboBox x:Name="FoodGroupComboBox" Margin="0,5" Padding="5" />
+                    <Button Content="Add Ingredient" Margin="0,5" Padding="5" Click="AddIngredientButton_Click"/>
+                    <ListBox x:Name="IngredientListBox" Height="100" Margin="0,5"/>
+                </StackPanel>
+            </GroupBox>
 
-        <GroupBox Header="Steps" Margin="0,0,0,10"
-                  BorderBrush="#D4A373">
-            <StackPanel x:Name="StepsPanel"/>
-        </GroupBox>
+            <GroupBox Header="Steps" Margin="0,0,0,10"
+                      BorderBrush="#D4A373">
+                <StackPanel x:Name="StepsPanel">
+                    <TextBox x:Name="StepDescriptionTextBox" Margin="0,5" Padding="5" />
+                    <Button Content="Add Step" Margin="0,5" Padding="5" Click="AddStepButton_Click"/>
+                    <ListBox x:Name="StepListBox" Height="100" Margin="0,5"/>
+                </StackPanel>
+            </GroupBox>
 
-        <Button Content="Save Recipe" HorizontalAlignment="Center" Margin="0,0,0,0" 
-                Width="150" Padding="8" Background="#D4A373" Foreground="White"
-                BorderBrush="#8C6448" FontSize="14" FontWeight="Bold" Click="SaveRecipeButton_Click" />
-    </StackPanel>
+            <Button Content="Save Recipe" HorizontalAlignment="Center" Margin="0,0,0,0"
+                    Width="150" Padding="8" Background="#D4A373" Foreground="White"
+                    BorderBrush="#8C6448" FontSize="14" FontWeight="Bold" Click="SaveRecipeButton_Click" />
+        </StackPanel>
+    </ScrollViewer>
 </Window>
