@@ -1,4 +1,5 @@
 ﻿//**************************************************************START OF IMPORTS*****************************************************//
+using PROG6221_ST10255631_WPF.Code;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,11 +33,26 @@ namespace PROG6221_ST10255631_WPF_FINAL
     /// </summary>
     public partial class Display_recipe_window : Window
     {
-        public Display_recipe_window()
+        public Display_recipe_window(Recipe recipe)
         {
             InitializeComponent();
+            DisplayRecipe(recipe);
         }
-        //--------------------------------------------------------------------------------------------------------------//
+
+        private void DisplayRecipe(Recipe recipe)
+        {
+            RecipeNameTextBlock.Text = recipe.Name;
+
+            foreach (var ingredient in recipe.Ingredients)
+            {
+                IngredientsListBox.Items.Add(ingredient.ToString());
+            }
+
+            foreach (var step in recipe.Steps)
+            {
+                StepsListBox.Items.Add(step.ToString());
+            }
+        }
     }
 }
 //**************************************************************END OF FILE**************************************************************//

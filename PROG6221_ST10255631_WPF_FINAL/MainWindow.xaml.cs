@@ -34,40 +34,57 @@ namespace PROG6221_ST10255631_WPF_FINAL
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Recipe> recipes; 
+
         public MainWindow()
         {
-            List<string> recipes = new List<string>();
-                InitializeComponent();
-            //--------------------------------------------------------------------------------------------------------------//
+            InitializeComponent();
+            recipes = new List<Recipe>(); // Initialize the list
         }
 
-        private void AddRecipeButton_Click(object sender, RoutedEventArgs e, List<string> recipes)
+        private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
         {
-            string newRecipe = RecipeTextBox.Text;
-            if (!string.IsNullOrEmpty(newRecipe))
+            RECIPE_adder_window addRecipeWindow = new RECIPE_adder_window();
+            addRecipeWindow.ShowDialog();
+
+            if (addRecipeWindow.NewRecipe != null)
             {
-                recipes.Add(newRecipe);
-                RecipeListBox.Items.Add(newRecipe);
-                RecipeTextBox.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Please enter a recipe!");
+                recipes.Add(addRecipeWindow.NewRecipe);
+                RecipeListBox.Items.Add(addRecipeWindow.NewRecipe.Name);
             }
         }
-        //--------------------------------------------------------------------------------------------------------------//
 
         private void ViewRecipeButton_Click(object sender, RoutedEventArgs e)
         {
             if (RecipeListBox.SelectedItem != null)
             {
-                MessageBox.Show(RecipeListBox.SelectedItem.ToString());
+                int selectedIndex = RecipeListBox.SelectedIndex;
+                Recipe selectedRecipe = recipes[selectedIndex];
+
+                Display_recipe_window displayWindow = new Display_recipe_window(selectedRecipe);
+                displayWindow.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Please select a recipe to view.");
             }
-            //--------------------------------------------------------------------------------------------------------------//
+        }
+
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow(recipes);
+            menuWindow.ShowDialog();
+
+            RefreshRecipeList();
+        }
+
+        private void RefreshRecipeList()
+        {
+            RecipeListBox.Items.Clear();
+            foreach (var recipe in recipes)
+            {
+                RecipeListBox.Items.Add(recipe.Name);
+            }
         }
     }
 }

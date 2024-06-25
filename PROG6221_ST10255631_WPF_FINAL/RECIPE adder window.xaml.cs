@@ -34,6 +34,9 @@ namespace PROG6221_ST10255631_WPF_FINAL
         {
             UnitComboBox.ItemsSource = System.Enum.GetValues(typeof(Recipe.Measurement));
             FoodGroupComboBox.ItemsSource = System.Enum.GetValues(typeof(Recipe.FoodGroups));
+
+            UnitComboBox.SelectedIndex = 0;
+            FoodGroupComboBox.SelectedIndex = 0;
         }
 
         private void AddIngredientButton_Click(object sender, RoutedEventArgs e)

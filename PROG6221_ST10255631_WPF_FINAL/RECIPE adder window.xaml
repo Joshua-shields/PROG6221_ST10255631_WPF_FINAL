@@ -12,36 +12,35 @@
 
     <ScrollViewer Margin="0,0,0,-171">
         <StackPanel Margin="30" Background="#FFF0E6">
-            <Label Content="Recipe Name:"
-                   FontSize="18" FontWeight="Bold" Margin="0,0,0,10" />
-            <TextBox x:Name="RecipeNameTextBox" Margin="0,0,0,10"
-                     Padding="8" BorderBrush="#D4A373" BorderThickness="1" />
+            <Label Content="Recipe Name:" FontSize="18" FontWeight="Bold" Margin="0,0,0,10" />
+            <TextBox x:Name="RecipeNameTextBox" Margin="0,0,0,10" Padding="8" BorderBrush="#D4A373" BorderThickness="1" />
 
-            <GroupBox Header="Ingredients" Margin="0,0,0,10"
-                      BorderBrush="#D4A373">
+            <GroupBox Header="Ingredients" Margin="0,0,0,10" BorderBrush="#D4A373">
                 <StackPanel x:Name="IngredientsPanel">
+                    <Label Content="Ingredient:" Margin="0,5" />
                     <TextBox x:Name="IngredientNameTextBox" Margin="0,5" Padding="5" />
+                    <Label Content="Amount:" Margin="0,5" />
                     <TextBox x:Name="QuantityTextBox" Margin="0,5" Padding="5" />
                     <ComboBox x:Name="UnitComboBox" Margin="0,5" Padding="5" />
-                    <TextBox x:Name="CaloriesTextBox" Margin="0,5" Padding="5" />
+                    <Label Content="Calories:" Grid.Column="0" HorizontalAlignment="Center" Margin="0,2" VerticalAlignment="Center" />
+                    <TextBox x:Name="CaloriesTextBox" Margin="0,5" Padding="5" Grid.Column="1" />
                     <ComboBox x:Name="FoodGroupComboBox" Margin="0,5" Padding="5" />
                     <Button Content="Add Ingredient" Margin="0,5" Padding="5" Click="AddIngredientButton_Click"/>
                     <ListBox x:Name="IngredientListBox" Height="100" Margin="0,5"/>
                 </StackPanel>
             </GroupBox>
 
-            <GroupBox Header="Steps" Margin="0,0,0,10"
-                      BorderBrush="#D4A373">
+            <GroupBox Header="Steps" Margin="0,0,0,10" BorderBrush="#D4A373">
                 <StackPanel x:Name="StepsPanel">
+                    <Label Content="Step Description:" Margin="0,5" />
                     <TextBox x:Name="StepDescriptionTextBox" Margin="0,5" Padding="5" />
                     <Button Content="Add Step" Margin="0,5" Padding="5" Click="AddStepButton_Click"/>
                     <ListBox x:Name="StepListBox" Height="100" Margin="0,5"/>
                 </StackPanel>
             </GroupBox>
 
-            <Button Content="Save Recipe" HorizontalAlignment="Center" Margin="0,0,0,0"
-                    Width="150" Padding="8" Background="#D4A373" Foreground="White"
-                    BorderBrush="#8C6448" FontSize="14" FontWeight="Bold" Click="SaveRecipeButton_Click" />
+            <Button Content="Save Recipe" HorizontalAlignment="Center" Margin="0,0,0,0" Width="150" Padding="8" Background="#D4A373" Foreground="White" BorderBrush="#8C6448" FontSize="14" FontWeight="Bold" Click="SaveRecipeButton_Click" />
         </StackPanel>
     </ScrollViewer>
+
 </Window>
