@@ -18,6 +18,8 @@ Unit Testing: Includes unit tests to ensure code quality and functionality.
 Instructions to Compile and Run the Application:
 
 PART 3 POE FINAL
+I CHOSE FILTER BY MAX CALORIES: this means if the recipe is 90 calories and i filter saying max is 100 it will carry on displaying if i chose 60 it will go away if i choose 100 again it will display again 
+
 
 Download the Project:
 Download the project from the GitHub repository: https://github.com/Joshua-shields/PROG6221_ST10255631_WPF_FINAL.git
