@@ -7,10 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -34,57 +36,91 @@ namespace PROG6221_ST10255631_WPF_FINAL
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Recipe> recipes; 
+        private List<Recipe> recipes; // List to store all recipes
+        public int maxCalories = 0; // Variable to store the maximum calories for filtering
+
 
         public MainWindow()
         {
             InitializeComponent();
-            recipes = new List<Recipe>(); // Initialize the list
+            recipes = new List<Recipe>(); // Initialise the list of recipes
         }
+        //--------------------------------------------------------------------------------------------------------------//      
 
+        /// <summary>
+        /// Event handler for the Add Recipe button click
+        /// </summary>
+        /// <param name="sender">The object that triggered the event</param>
+        /// <param name="e">Event arguments</param>
         private void AddRecipeButton_Click(object sender, RoutedEventArgs e)
         {
-            RECIPE_adder_window addRecipeWindow = new RECIPE_adder_window();
+            RECIPE_adder_window addRecipeWindow = new RECIPE_adder_window(); // Create and show the recipe adder window
             addRecipeWindow.ShowDialog();
 
-            if (addRecipeWindow.NewRecipe != null)
+            if (addRecipeWindow.NewRecipe != null)  // If a new recipe was created adds it to the list and updates 
             {
                 recipes.Add(addRecipeWindow.NewRecipe);
                 RecipeListBox.Items.Add(addRecipeWindow.NewRecipe.Name);
             }
         }
+        //--------------------------------------------------------------------------------------------------------------//      
 
+        /// <summary>
+        /// Event handler for the View Recipe button click
+        /// </summary>
+        /// <param name="sender">The object that triggered the event</param>
+        /// <param name="e">Event arguments</param>
         private void ViewRecipeButton_Click(object sender, RoutedEventArgs e)
         {
-            if (RecipeListBox.SelectedItem != null)
+            if (RecipeListBox.SelectedItem != null) // Check if a recipe is selected
             {
-                int selectedIndex = RecipeListBox.SelectedIndex;
+                int selectedIndex = RecipeListBox.SelectedIndex;  // Get the selected recipe
                 Recipe selectedRecipe = recipes[selectedIndex];
 
-                Display_recipe_window displayWindow = new Display_recipe_window(selectedRecipe);
+                Display_recipe_window displayWindow = new Display_recipe_window(selectedRecipe); // Create and show the recipe display window
                 displayWindow.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Please select a recipe to view.");
+                MessageBox.Show("Please select a recipe to view."); // Show an error message if no recipe is selected
             }
         }
+        //--------------------------------------------------------------------------------------------------------------//      
 
+        /// <summary>
+        /// Event handler for the Menu button click
+        /// </summary>
+        /// <param name="sender">The object that triggered the event</param>
+        /// <param name="e">Event arguments</param>
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
-            MenuWindow menuWindow = new MenuWindow(recipes);
+            MenuWindow menuWindow = new MenuWindow(recipes, RecipeListBox, this); 
+            menuWindow.MaxCaloriesChanged += MenuWindow_MaxCaloriesChanged;
             menuWindow.ShowDialog();
-
+        }
+        //--------------------------------------------------------------------------------------------------------------//      
+        private void MenuWindow_MaxCaloriesChanged(object sender, EventArgs e)
+        {
+            // Update maxCalories in MainWindow
+            maxCalories = ((MenuWindow)sender).maxCalories;
             RefreshRecipeList();
         }
 
-        private void RefreshRecipeList()
+        /// <summary>
+        /// Refreshes the recipe list and sorts the recipe in alphabetical order
+        /// </summary>
+        public void RefreshRecipeList()
         {
             RecipeListBox.Items.Clear();
-            foreach (var recipe in recipes)
+            
+            var sortedRecipes = recipes.Where(r => r.CalculateTotalCalories() <= maxCalories)
+                                      .OrderBy(r => r.Name);
+
+            foreach (var recipe in sortedRecipes)
             {
                 RecipeListBox.Items.Add(recipe.Name);
             }
+            //--------------------------------------------------------------------------------------------------------------//      
         }
     }
 }

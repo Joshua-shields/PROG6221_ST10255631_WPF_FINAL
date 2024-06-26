@@ -36,22 +36,29 @@ namespace PROG6221_ST10255631_WPF_FINAL
         public Display_recipe_window(Recipe recipe)
         {
             InitializeComponent();
-            DisplayRecipe(recipe);
+            DisplayRecipe(recipe); // Call method to display the recipe
         }
+        //--------------------------------------------------------------------------------------------------------------//      
+
+        /// <summary>
+        /// Displays the details of a recipe in the window
+        /// </summary>
+        /// <param name="recipe">The recipe to be displayed</param>
 
         private void DisplayRecipe(Recipe recipe)
         {
-            RecipeNameTextBlock.Text = recipe.Name;
+            RecipeNameTextBlock.Text = recipe.Name; // Set the recipe name in the TextBlock
 
-            foreach (var ingredient in recipe.Ingredients)
+            foreach (var ingredient in recipe.Ingredients) // Add each ingredient to the IngredientsListBox
             {
                 IngredientsListBox.Items.Add(ingredient.ToString());
             }
 
-            foreach (var step in recipe.Steps)
+            foreach (var step in recipe.Steps) // Add each step to the StepsListBox
             {
                 StepsListBox.Items.Add(step.ToString());
             }
+            //--------------------------------------------------------------------------------------------------------------//      
         }
     }
 }

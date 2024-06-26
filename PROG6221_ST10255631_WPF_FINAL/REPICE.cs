@@ -98,6 +98,7 @@ namespace PROG6221_ST10255631_WPF.Code
                 return $"{Quantity} {Unit} of {Name} ({Calories} calories, {FoodGroup})";
             }
         }
+        //--------------------------------------------------------------------------------------------------------------//
 
         /// <summary>
         /// Represents a single step in a recipe.
@@ -126,7 +127,7 @@ namespace PROG6221_ST10255631_WPF.Code
         //--------------------------------------------------------------------------------------------------------------//
 
         /// <summary>
-        /// Enumeration of common cooking measurements.
+        /// Enumeration of common measurements.
         /// </summary>
         public enum Measurement
         {
@@ -157,7 +158,7 @@ namespace PROG6221_ST10255631_WPF.Code
             Vegetables,
             Dairy,
             Sweets
-               
+            //--------------------------------------------------------------------------------------------------------------//      
         }
     }
 }
