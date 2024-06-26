@@ -29,6 +29,7 @@ namespace PROG6221_ST10255631_WPF.Code
             Ingredients = new List<Ingredient>();
             Steps = new List<Step>();
         }
+        //--------------------------------------------------------------------------------------------------------------//
 
         /// <summary>
         /// Gets or sets the name of the recipe.
@@ -45,6 +46,7 @@ namespace PROG6221_ST10255631_WPF.Code
         /// </summary>
         public List<Step> Steps { get; }
 
+        //--------------------------------------------------------------------------------------------------------------//
         /// <summary>
         /// Calculates the total calories for the recipe.
         /// </summary>
@@ -58,6 +60,7 @@ namespace PROG6221_ST10255631_WPF.Code
             }
             return totalCalories;
         }
+        //--------------------------------------------------------------------------------------------------------------//
 
         /// <summary>
         /// Represents a single ingredient in a recipe.

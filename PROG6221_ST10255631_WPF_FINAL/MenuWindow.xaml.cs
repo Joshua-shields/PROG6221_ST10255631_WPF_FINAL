@@ -40,18 +40,18 @@ namespace PROG6221_ST10255631_WPF_FINAL
         private ListBox recipeListBox; // Add ListBox property
         public event EventHandler MaxCaloriesChanged;
 
-        /// <summary>
-        /// 
+        // <summary>
+        /// Initialises a new instance of the MenuWindow class
         /// </summary>
-        /// <param name="recipes"></param>
-        /// <param name="recipeListBox"></param>
-        /// <param name="owner"></param>
+        /// <param name="recipes">A list of Recipe objects to be displayed in the menu.</param>
+        /// <param name="recipeListBox">The ListBox control used to display the recipes.</param>
+        /// <param name="owner">The MainWindow that owns this MenuWindow.</param>
         public MenuWindow(List<Recipe> recipes, ListBox recipeListBox, MainWindow owner) 
         {
             InitializeComponent();
             this.recipes = recipes;
             this.recipeListBox = recipeListBox;
-            this.Owner = owner;
+            this.Owner = owner; // Set the owner of this window
 
 
         }
@@ -106,13 +106,14 @@ namespace PROG6221_ST10255631_WPF_FINAL
                 }
             }
         }
+        //--------------------------------------------------------------------------------------------------------------//
 
-            /// <summary>
-            /// Event handler for the Clear Recipes button click
-            /// </summary>
-            /// <param name="sender">The object that triggered the event</param>
-            /// <param name="e">Event arguments</param>
-            private void ClearRecipes_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Event handler for the Clear Recipes button click
+        /// </summary>
+        /// <param name="sender">The object that triggered the event</param>
+        /// <param name="e">Event arguments</param>
+        private void ClearRecipes_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to clear all recipes?", "Confirm", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
@@ -126,7 +127,7 @@ namespace PROG6221_ST10255631_WPF_FINAL
                 }
                 else
                 {
-                    // Handle the case where the Owner is null, e.g., display an error message
+                    // Handle the case where the Owner is null display an error message
                     MessageBox.Show("The MenuWindow was not opened from the MainWindow.");
                 }
             }
