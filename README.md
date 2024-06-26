@@ -1,25 +1,47 @@
 # PROG6221_ST10255631_WPF_FINAL
+Name: Joshua Shields
+Student Number: ST10255631
+Module: PROG6221
 
-The purpose of the project This programming project develops a command-line application for creating, storing, and managing recipes using object-oriented principles. In part 1, users can enter a single recipe's ingredients, quantities, units, and steps, scaling quantities as needed. In part 2 the application then extends to support multiple recipes with names, displaying them alphabetically. Users can track nutritional information like calories and food groups per ingredient. The application calculates total calories, notifying users if exceeding 300. Key requirements include using classes, generic collections, delegates for calorie notification, unit testing and Git version control with a GitHub repository.
+READ ME * ALSO ON GITHUB GitHub Repository: https://github.com/Joshua-shields/PROG6221_ST10255631_WPF_FINAL.git
+Part 1: Users can enter a single recipe's ingredients, quantities, units, and steps. The application allows users to scale quantities as needed.
 
-Instructions to Compile and Run the Application
+Part 2: The application supports multiple recipes with names, displaying them alphabetically. Users can track nutritional information like calories and food groups per ingredient. The application calculates total calories and notifies users if exceeding 300 calories.
 
-Clone the Repository Copy codegit clone https://github.com/Joshua-shields/st10255631_PROG_POE.git OR
+Key Features:
 
-Unzip the file
+Object-Oriented Programming
+Generic Collections: Uses generic collections to store and manage recipes efficiently.
+Delegates: Implements delegates for calorie notification functionality.
+Unit Testing: Includes unit tests to ensure code quality and functionality.
 
-Open the Solution in Visual Studio
+Instructions to Compile and Run the Application:
 
-Launch Visual Studio. Go to File > Open > Project/Solution. Navigate to the cloned repository folder and select the solution file (.sln). OR The unzipped file
+PART 3 POE FINAL
 
-Build the Solution Build the solution to compile the code to do this in Visual Studio, you need to go to Build > Build Solution
+Download the Project:
+Download the project from the GitHub repository: https://github.com/Joshua-shields/PROG6221_ST10255631_WPF_FINAL.git
+Unzip the Downloaded File:
+Extract the contents of the downloaded ZIP file.
+Open the Solution in Visual Studio:
+Launch Visual Studio.
+Right-click the .sln file in the extracted folder and select "Open with Visual Studio."
+Build the Solution:
+Press Ctrl+Shift+B to build the solution.
+Run the Application:
+After the solution has been built successfully, press F5 to run the application.
 
-Run the Application Run the application by pressing the green start button
+Changes Made (based on lecturer's feedback):
 
-Feedback I fixed my README so that it had more detail. I also added better error handling for part 2 of the code. The README now provides comprehensive explanations and clear guidance, making it easier for users to understand the project's purpose, structure, and functionality. The improved error handling ensures the application can gracefully handle and recover from a wider range of potential errors, leading to more robust and reliable execution. Made the format better as well as added colored text display. I refined the overall format and presentation, adhering to best practices for improved readability and maintainability. The colored text displays makes it look visually appealing but i also not used to much. With these changes, the project now has a more user-friendly and informative README, better error handling capabilities and avisually enhanced codebase. These improvements contribute to a better overall experience for users and developers, this helps with easier comprehension.
+Unlimited Recipes: Users can now enter an unlimited number of recipes.
+Recipe Naming: Each recipe can now have a unique name.
+Alphabetical Sorting: Recipes are displayed alphabetically by name.
+Recipe Selection: Users can choose which recipe to display using a button.
+Nutritional Information: Users can enter calories and food groups with a drop box for each ingredient.
+Error Handling Improvements: Enhanced error handling for a more reliable experience.
+Improved README: This README file provides more detailed explanations so its easier to read for the user.
 
-Major Changes Made
+Additional Information:
 
-Users are now able to enter an unlimited number of recipes. Users can enter a name for each recipe. Listed recipes are displayed alphabetically by name. Users can choose which recipe to display. Users can enter the calories and food groups for each ingredient. The user is notified when the total calories exceed 300 in a red pop up message.
+The application is built using C# and .NET 4.8. Uses wpf to display the info.
 
-Additional Information The application is built using c# and net 4.8
