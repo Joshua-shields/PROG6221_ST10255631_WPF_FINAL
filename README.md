@@ -43,6 +43,12 @@ Nutritional Information: Users can enter calories and food groups with a drop bo
 Error Handling Improvements: Enhanced error handling for a more reliable experience.
 Improved README: This README file provides more detailed explanations so its easier to read for the user.
 
+![Screenshot 2024-07-19 at 12 31 57](https://github.com/user-attachments/assets/9b8f1862-9d3c-4475-96be-b9a8974b7cb7)
+![Screenshot 2024-07-19 at 12 32 10](https://github.com/user-attachments/assets/ec17edea-7042-4865-9e9c-23534f95b0b8)
+![Screenshot 2024-07-19 at 12 32 26](https://github.com/user-attachments/assets/f7cf7699-83d4-4dd8-929a-2f55c0f6715c)
+
+
+
 Additional Information:
 
 The application is built using C# and .NET 4.8. Uses wpf to display the info.
