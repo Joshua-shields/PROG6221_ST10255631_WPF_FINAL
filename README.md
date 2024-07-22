@@ -3,6 +3,8 @@ Name: Joshua Shields
 Student Number: ST10255631
 Module: PROG6221
 
+# * note this project was made for university course work 
+
 READ ME * ALSO ON GITHUB GitHub Repository: https://github.com/Joshua-shields/PROG6221_ST10255631_WPF_FINAL.git
 Part 1: Users can enter a single recipe's ingredients, quantities, units, and steps. The application allows users to scale quantities as needed.
 
